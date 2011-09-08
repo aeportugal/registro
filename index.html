@@ -1,41 +1,7 @@
 <html>
-<head>    
-    <script src="jquery1.6.2.min.js" type="text/javascript"></script>
-    <script src="jquery.mobile1.0b2.min.js" type="text/javascript"></script>
-    <script src="jquery.jmsajax.min.js" type="text/javascript"></script>
-    
-    <script type="text/javascript">
-
-        function Click() {
-            var url = $.jmsajaxurl({
-                url: "http://192.168.1.118/WS_INFOMEXMovil/WS_INFOMEXMobile.asmx",
-                method: "ObtenerClaves",
-                data: {hola:"mundo"}
-
-            });
-            $.getJSON(url + "&callback=?&format=json", callback);
-        }
-        
-        
-
-        function callback(msg) {
-
-        $('#divResults').empty();
-        $('#divResults').append('<table id="TablaResultado"><tr><th>Guid</th><th>Clave</th><th>Nombre</th></tr> ');
-       ;
-       var datos = eval(msg.d);
-        for (var dat in datos) {
-            $('#TablaResultado tr:last').after('<tr><td>' + datos[dat][0] + '</td><td>' + datos[dat][1] + '</td><td>' + datos[dat][2] + '</td></tr>');   
-        }
-        
-   }                           
-    </script>
+<head>        
 </head>
 <body>
-    <div>    
-        <input id="Button1" type="button" value="Presioname" onclick="Click();" /><br />   
-        <div id="divResults">
-        </div>        
-    </div>
+    <h1>Hola mundo</h1>
 </body>
 </html>
